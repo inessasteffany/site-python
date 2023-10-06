@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mulheres Inspiradoras na Tecnologia</title>
+    <style>
+        body {
+            background-color: #e6f7ff;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .footer {
+            background-color: #e6f7ff;
+            text-align: center;
+            padding: 10px;
+        }
+        ul{
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>3 Mulheres Inspiradoras na Tecnologia</h1>
+        <ul>
+            {% for mulher in mulheres %}
+            <li>
+                <h2>{{ mulher['nome'] }}</h2>
+                <img src="{{ url_for('static', filename=mulher['imagem']) }}" alt="{{ mulher['nome'] }}" width="400">
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="footer">
+        <p>Projeto desenvolvido durante o curso Elas na Tech</p>
+        <p>Todos os direitos reservados para @elosusti</p>
+        <p>Créditos: freepik, flexclip</p>
+    </div>
+</body>
+</html>
